@@ -3,6 +3,8 @@ import { render, getByTestId, fireEvent, getByLabelText } from "@testing-library
 import ContactForm from './ContactForm';
 import 'mutationobserver-shim';
 
+const container = document.body;
+
 test('ContactForm renders without crashing', () => {
     render(<ContactForm />);
 });
@@ -13,7 +15,7 @@ test("First Name text renders", () => {
 	getByText(/first name/i);
 });
 
-test("Last Name is renders", () => {
+test("Last Name text renders", () => {
     const { getByText } = render(<ContactForm />);
 
     getByText(/last name/i);
@@ -65,3 +67,9 @@ test("Submit has id", () => {
     queryByTestId(/submit/i);
 })
 
+// test("Submit button fires when clicked", () => {
+//     const { getByTestId } = render(<ContactForm />);
+
+//     fireEvent.click(getByTestId(/submit/i));
+
+// })

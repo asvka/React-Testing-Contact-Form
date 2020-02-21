@@ -7,10 +7,18 @@ test("renders App without crashing", () => {
   render(<App />);
 });
 
-test("Returns a div", () => {
+test("App has id", () => {
   const { queryByTestId } = render(<App />);
-  // document.body.div = div;
-
   expect(queryByTestId(/app/i));
+});
 
+test("App displays ContactForm", () => {
+  const { queryByTestId } = render(<App />);
+  expect(queryByTestId(/ContactForm/i));
+});
+
+test("App displays a div", () => {
+  const { queryByTestId } = render(<App />);
+  expect(queryByTestId(/div/i));
 })
+
