@@ -7,8 +7,10 @@ test("renders App without crashing", () => {
   render(<App />);
 });
 
-// test("Returns a div", () => {
-//   render(<App />);
+test("Returns a div", () => {
+  const { queryByTestId } = render(<App />);
+  // document.body.div = div;
 
+  expect(queryByTestId(/app/i));
 
-// })
+})
